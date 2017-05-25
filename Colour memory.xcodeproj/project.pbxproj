@@ -1,0 +1,633 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		058EFA7C1ED6E0230056A56A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EFA7B1ED6E0230056A56A /* AppDelegate.swift */; };
+		058EFA811ED6E0230056A56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058EFA7F1ED6E0230056A56A /* Main.storyboard */; };
+		058EFA841ED6E0230056A56A /* Colour_memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 058EFA821ED6E0230056A56A /* Colour_memory.xcdatamodeld */; };
+		058EFA861ED6E0230056A56A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 058EFA851ED6E0230056A56A /* Assets.xcassets */; };
+		058EFA891ED6E0230056A56A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058EFA871ED6E0230056A56A /* LaunchScreen.storyboard */; };
+		058EFA941ED6E0230056A56A /* Colour_memoryTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EFA931ED6E0230056A56A /* Colour_memoryTests.swift */; };
+		059226911ED6EF5F00C08B90 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059226901ED6EF5F00C08B90 /* MainViewController.swift */; };
+		059226971ED6FCE200C08B90 /* RankViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059226961ED6FCE200C08B90 /* RankViewController.swift */; };
+		059226991ED6FFA800C08B90 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059226981ED6FFA800C08B90 /* User.swift */; };
+		0592269B1ED7010800C08B90 /* GameCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592269A1ED7010800C08B90 /* GameCollectionViewController.swift */; };
+		059226A01ED70B6400C08B90 /* CardViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0592269E1ED70B6400C08B90 /* CardViewCell.swift */; };
+		059226A11ED70B6400C08B90 /* CardViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0592269F1ED70B6400C08B90 /* CardViewCell.xib */; };
+		059226A31ED7242F00C08B90 /* Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 059226A21ED7242F00C08B90 /* Extension.swift */; };
+		91C110BECDA6BAC65D92B07D /* Pods_Colour_memoryTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3165DC2AB741623343605E4F /* Pods_Colour_memoryTests.framework */; };
+		EAC5D15DBBB4CECBFC4DDA35 /* Pods_Colour_memory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 82A30800FC471CEDAA86AFC2 /* Pods_Colour_memory.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		058EFA901ED6E0230056A56A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 058EFA701ED6E0230056A56A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 058EFA771ED6E0230056A56A;
+			remoteInfo = "Colour memory";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		058EFA781ED6E0230056A56A /* Colour memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colour memory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		058EFA7B1ED6E0230056A56A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		058EFA801ED6E0230056A56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		058EFA831ED6E0230056A56A /* Colour_memory.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Colour_memory.xcdatamodel; sourceTree = "<group>"; };
+		058EFA851ED6E0230056A56A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		058EFA881ED6E0230056A56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		058EFA8A1ED6E0230056A56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		058EFA8F1ED6E0230056A56A /* Colour memoryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Colour memoryTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		058EFA931ED6E0230056A56A /* Colour_memoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colour_memoryTests.swift; sourceTree = "<group>"; };
+		058EFA951ED6E0230056A56A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		059226901ED6EF5F00C08B90 /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		059226961ED6FCE200C08B90 /* RankViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankViewController.swift; sourceTree = "<group>"; };
+		059226981ED6FFA800C08B90 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		0592269A1ED7010800C08B90 /* GameCollectionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameCollectionViewController.swift; sourceTree = "<group>"; };
+		0592269E1ED70B6400C08B90 /* CardViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CardViewCell.swift; sourceTree = "<group>"; };
+		0592269F1ED70B6400C08B90 /* CardViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CardViewCell.xib; sourceTree = "<group>"; };
+		059226A21ED7242F00C08B90 /* Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extension.swift; sourceTree = "<group>"; };
+		15EE01D9E65723729807578F /* Pods-Colour memoryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colour memoryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colour memoryTests/Pods-Colour memoryTests.debug.xcconfig"; sourceTree = "<group>"; };
+		3165DC2AB741623343605E4F /* Pods_Colour_memoryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Colour_memoryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6649152014903C4A8A078354 /* Pods-Colour memory.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colour memory.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Colour memory/Pods-Colour memory.debug.xcconfig"; sourceTree = "<group>"; };
+		77975447BE779C1ECF1FBED1 /* Pods-Colour memory.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colour memory.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colour memory/Pods-Colour memory.release.xcconfig"; sourceTree = "<group>"; };
+		82A30800FC471CEDAA86AFC2 /* Pods_Colour_memory.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Colour_memory.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A50FB57B830A8BD05F439D82 /* Pods-Colour memoryTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Colour memoryTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Colour memoryTests/Pods-Colour memoryTests.release.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		058EFA751ED6E0230056A56A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EAC5D15DBBB4CECBFC4DDA35 /* Pods_Colour_memory.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		058EFA8C1ED6E0230056A56A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				91C110BECDA6BAC65D92B07D /* Pods_Colour_memoryTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		058EFA6F1ED6E0230056A56A = {
+			isa = PBXGroup;
+			children = (
+				058EFA7A1ED6E0230056A56A /* Colour memory */,
+				058EFA921ED6E0230056A56A /* Colour memoryTests */,
+				058EFA791ED6E0230056A56A /* Products */,
+				B3543286C0B8E5BCC3B89669 /* Pods */,
+				ACDF8343DB16AF1B9BF5D1EF /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		058EFA791ED6E0230056A56A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				058EFA781ED6E0230056A56A /* Colour memory.app */,
+				058EFA8F1ED6E0230056A56A /* Colour memoryTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		058EFA7A1ED6E0230056A56A /* Colour memory */ = {
+			isa = PBXGroup;
+			children = (
+				0592268D1ED6EF3A00C08B90 /* Module */,
+				0592268E1ED6EF3A00C08B90 /* View */,
+				0592268F1ED6EF5F00C08B90 /* Controller */,
+				058EFA7B1ED6E0230056A56A /* AppDelegate.swift */,
+				058EFA7F1ED6E0230056A56A /* Main.storyboard */,
+				058EFA851ED6E0230056A56A /* Assets.xcassets */,
+				058EFA871ED6E0230056A56A /* LaunchScreen.storyboard */,
+				058EFA8A1ED6E0230056A56A /* Info.plist */,
+				058EFA821ED6E0230056A56A /* Colour_memory.xcdatamodeld */,
+			);
+			path = "Colour memory";
+			sourceTree = "<group>";
+		};
+		058EFA921ED6E0230056A56A /* Colour memoryTests */ = {
+			isa = PBXGroup;
+			children = (
+				058EFA931ED6E0230056A56A /* Colour_memoryTests.swift */,
+				058EFA951ED6E0230056A56A /* Info.plist */,
+			);
+			path = "Colour memoryTests";
+			sourceTree = "<group>";
+		};
+		0592268D1ED6EF3A00C08B90 /* Module */ = {
+			isa = PBXGroup;
+			children = (
+				059226981ED6FFA800C08B90 /* User.swift */,
+				059226A21ED7242F00C08B90 /* Extension.swift */,
+			);
+			path = Module;
+			sourceTree = "<group>";
+		};
+		0592268E1ED6EF3A00C08B90 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0592269E1ED70B6400C08B90 /* CardViewCell.swift */,
+				0592269F1ED70B6400C08B90 /* CardViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0592268F1ED6EF5F00C08B90 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				059226901ED6EF5F00C08B90 /* MainViewController.swift */,
+				059226961ED6FCE200C08B90 /* RankViewController.swift */,
+				0592269A1ED7010800C08B90 /* GameCollectionViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		ACDF8343DB16AF1B9BF5D1EF /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				82A30800FC471CEDAA86AFC2 /* Pods_Colour_memory.framework */,
+				3165DC2AB741623343605E4F /* Pods_Colour_memoryTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B3543286C0B8E5BCC3B89669 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				6649152014903C4A8A078354 /* Pods-Colour memory.debug.xcconfig */,
+				77975447BE779C1ECF1FBED1 /* Pods-Colour memory.release.xcconfig */,
+				15EE01D9E65723729807578F /* Pods-Colour memoryTests.debug.xcconfig */,
+				A50FB57B830A8BD05F439D82 /* Pods-Colour memoryTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		058EFA771ED6E0230056A56A /* Colour memory */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 058EFA981ED6E0230056A56A /* Build configuration list for PBXNativeTarget "Colour memory" */;
+			buildPhases = (
+				30DF073972D45F6FFC8AF45C /* [CP] Check Pods Manifest.lock */,
+				058EFA741ED6E0230056A56A /* Sources */,
+				058EFA751ED6E0230056A56A /* Frameworks */,
+				058EFA761ED6E0230056A56A /* Resources */,
+				17B741FD0E3B940C86325CD6 /* [CP] Embed Pods Frameworks */,
+				5E162E079CD77E275A3C3C6D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Colour memory";
+			productName = "Colour memory";
+			productReference = 058EFA781ED6E0230056A56A /* Colour memory.app */;
+			productType = "com.apple.product-type.application";
+		};
+		058EFA8E1ED6E0230056A56A /* Colour memoryTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 058EFA9B1ED6E0230056A56A /* Build configuration list for PBXNativeTarget "Colour memoryTests" */;
+			buildPhases = (
+				16DA5FC95B92446468E14293 /* [CP] Check Pods Manifest.lock */,
+				058EFA8B1ED6E0230056A56A /* Sources */,
+				058EFA8C1ED6E0230056A56A /* Frameworks */,
+				058EFA8D1ED6E0230056A56A /* Resources */,
+				4DA2D6C1B0DDD6C4CED7DAC0 /* [CP] Embed Pods Frameworks */,
+				6A46865C8D009FAACD43CFDC /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				058EFA911ED6E0230056A56A /* PBXTargetDependency */,
+			);
+			name = "Colour memoryTests";
+			productName = "Colour memoryTests";
+			productReference = 058EFA8F1ED6E0230056A56A /* Colour memoryTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		058EFA701ED6E0230056A56A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "Liguo Jiao";
+				TargetAttributes = {
+					058EFA771ED6E0230056A56A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 8436A3G9R2;
+						ProvisioningStyle = Automatic;
+					};
+					058EFA8E1ED6E0230056A56A = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = 8436A3G9R2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 058EFA771ED6E0230056A56A;
+					};
+				};
+			};
+			buildConfigurationList = 058EFA731ED6E0230056A56A /* Build configuration list for PBXProject "Colour memory" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 058EFA6F1ED6E0230056A56A;
+			productRefGroup = 058EFA791ED6E0230056A56A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				058EFA771ED6E0230056A56A /* Colour memory */,
+				058EFA8E1ED6E0230056A56A /* Colour memoryTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		058EFA761ED6E0230056A56A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058EFA891ED6E0230056A56A /* LaunchScreen.storyboard in Resources */,
+				058EFA861ED6E0230056A56A /* Assets.xcassets in Resources */,
+				059226A11ED70B6400C08B90 /* CardViewCell.xib in Resources */,
+				058EFA811ED6E0230056A56A /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		058EFA8D1ED6E0230056A56A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		16DA5FC95B92446468E14293 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		17B741FD0E3B940C86325CD6 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colour memory/Pods-Colour memory-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		30DF073972D45F6FFC8AF45C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4DA2D6C1B0DDD6C4CED7DAC0 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colour memoryTests/Pods-Colour memoryTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		5E162E079CD77E275A3C3C6D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colour memory/Pods-Colour memory-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6A46865C8D009FAACD43CFDC /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Colour memoryTests/Pods-Colour memoryTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		058EFA741ED6E0230056A56A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0592269B1ED7010800C08B90 /* GameCollectionViewController.swift in Sources */,
+				059226971ED6FCE200C08B90 /* RankViewController.swift in Sources */,
+				059226991ED6FFA800C08B90 /* User.swift in Sources */,
+				059226911ED6EF5F00C08B90 /* MainViewController.swift in Sources */,
+				058EFA7C1ED6E0230056A56A /* AppDelegate.swift in Sources */,
+				058EFA841ED6E0230056A56A /* Colour_memory.xcdatamodeld in Sources */,
+				059226A01ED70B6400C08B90 /* CardViewCell.swift in Sources */,
+				059226A31ED7242F00C08B90 /* Extension.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		058EFA8B1ED6E0230056A56A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				058EFA941ED6E0230056A56A /* Colour_memoryTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		058EFA911ED6E0230056A56A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 058EFA771ED6E0230056A56A /* Colour memory */;
+			targetProxy = 058EFA901ED6E0230056A56A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		058EFA7F1ED6E0230056A56A /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				058EFA801ED6E0230056A56A /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		058EFA871ED6E0230056A56A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				058EFA881ED6E0230056A56A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		058EFA961ED6E0230056A56A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		058EFA971ED6E0230056A56A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		058EFA991ED6E0230056A56A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6649152014903C4A8A078354 /* Pods-Colour memory.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8436A3G9R2;
+				INFOPLIST_FILE = "Colour memory/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "liguo-jiao.Colour-memory";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		058EFA9A1ED6E0230056A56A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 77975447BE779C1ECF1FBED1 /* Pods-Colour memory.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 8436A3G9R2;
+				INFOPLIST_FILE = "Colour memory/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "liguo-jiao.Colour-memory";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		058EFA9C1ED6E0230056A56A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15EE01D9E65723729807578F /* Pods-Colour memoryTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8436A3G9R2;
+				INFOPLIST_FILE = "Colour memoryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "liguo-jiao.Colour-memoryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Colour memory.app/Colour memory";
+			};
+			name = Debug;
+		};
+		058EFA9D1ED6E0230056A56A /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A50FB57B830A8BD05F439D82 /* Pods-Colour memoryTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8436A3G9R2;
+				INFOPLIST_FILE = "Colour memoryTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "liguo-jiao.Colour-memoryTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Colour memory.app/Colour memory";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		058EFA731ED6E0230056A56A /* Build configuration list for PBXProject "Colour memory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				058EFA961ED6E0230056A56A /* Debug */,
+				058EFA971ED6E0230056A56A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		058EFA981ED6E0230056A56A /* Build configuration list for PBXNativeTarget "Colour memory" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				058EFA991ED6E0230056A56A /* Debug */,
+				058EFA9A1ED6E0230056A56A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		058EFA9B1ED6E0230056A56A /* Build configuration list for PBXNativeTarget "Colour memoryTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				058EFA9C1ED6E0230056A56A /* Debug */,
+				058EFA9D1ED6E0230056A56A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		058EFA821ED6E0230056A56A /* Colour_memory.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				058EFA831ED6E0230056A56A /* Colour_memory.xcdatamodel */,
+			);
+			currentVersion = 058EFA831ED6E0230056A56A /* Colour_memory.xcdatamodel */;
+			path = Colour_memory.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = 058EFA701ED6E0230056A56A /* Project object */;
+}
