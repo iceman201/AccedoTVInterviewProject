@@ -12,8 +12,10 @@ private let reuseIdentifier = "cardView"
 
 class GameCollectionViewController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
     var firstCard: Int?
+    var firstCardIndex: Int?
     var secondCard: Int?
     var score = 0
+    var totalNumberOfCards = 16
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,27 +63,63 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         guard let cell = collectionView.cellForItem(at: indexPath) as? CardViewCell else {
             return
         }
+        
         cell.tapCardView(colourIndex: indexPath.row) { (index) in
             guard let cardIndex = index else {
                 return
             }
             if self.firstCard == nil {
+                self.firstCardIndex = indexPath.row
                 self.firstCard = cardIndex
             } else {
+                guard self.firstCardIndex != indexPath.row else {
+                    return
+                }
+                let indexSet = [self.firstCardIndex!, indexPath.row]
                 if cardIndex == self.firstCard {
                     print("haha")
                     self.score += 2
-                    self.navigationItem.title = "Score: \(self.score)"
-                    self.reloadInputViews()
-                    //two card disappear
+                    self.totalNumberOfCards -= 2
+                    self.animateCell(cellIndexs: indexSet, isFadeOut: true)
                     self.firstCard = nil
+                    self.firstCardIndex = nil
                 } else {
+                    self.animateCell(cellIndexs: indexSet, isFadeOut: false)
+                    // Is the score could go negative points?
+                    self.score -= 1
+                    // If not solution is here
+                    self.score = self.score < 0 ? 0 : self.score
+
                     self.firstCard = nil
-                    cell.flipBack()
+                    self.firstCardIndex = nil
                 }
+                self.navigationItem.title = "Score: \(self.score)"
             }
         }
     }
+    func animateCell(cellIndexs:[Int], isFadeOut: Bool) {
+        for eachIndex in cellIndexs {
+            guard let cell = self.getCellAtIndex(index: eachIndex, sectionNumber: 0) else {
+                assertionFailure("Animate Cell Error")
+                return
+            }
+            if isFadeOut {
+                cell.fadeOut()
+            } else {
+                cell.flipBack()
+            }
+        }
+    }
+    
+    fileprivate func getCellAtIndex(index:Int, sectionNumber: Int) -> CardViewCell? {
+        let index = IndexPath.init(row: index, section: sectionNumber)
+        guard let cell = collectionView?.cellForItem(at: index) as? CardViewCell else {
+            return nil
+        }
+        return cell
+    }
+    
+    
     /*
     // Uncomment this method to specify if the specified item should be highlighted during tracking
     override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {

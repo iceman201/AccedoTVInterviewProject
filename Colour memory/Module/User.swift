@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import RealmSwift
 
 private let _UserSharedInstance = User()
 

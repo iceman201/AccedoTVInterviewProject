@@ -41,5 +41,11 @@ class CardViewCell: UICollectionViewCell {
             }
         })
     }
+    
+    func fadeOut() {
+        UIView.animate(withDuration: 0.5, delay: 0.5, options: .curveLinear, animations: { 
+            self.cardImageView.alpha = 0
+        }, completion: nil)
+    }
 
 }

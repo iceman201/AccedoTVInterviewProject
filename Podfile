@@ -5,7 +5,7 @@ target 'Colour memory' do
   # Comment the next line if you're not using Swift and don't want to use dynamic frameworks
   use_frameworks!
 
-pod 'SQLite.swift', '~> 0.11.3'
+pod ‘RealmSwift’
 
   # Pods for Colour memory
 
