@@ -27,6 +27,17 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         collectionView?.contentInset = UIEdgeInsets(top: 50.0, left: 0, bottom: 0, right: 0)
         print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.navigationController?.isNavigationBarHidden = false
+    }
+    
 
     // MARK: UICollectionViewDataSource
 
@@ -42,7 +53,6 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CardViewCell else {
             return UICollectionViewCell()
         }
-        
         return cell
     }
 
@@ -71,13 +81,13 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
                 }
                 let indexSet = [self.firstCardIndex!, indexPath.row]
                 if cardIndex == self.firstCard {
-                    print("haha")
                     self.score += 2
                     self.totalNumberOfCards -= 2
                     if self.totalNumberOfCards == 0 {
                         self.alertMessages(title: "WIN!!!", message: "Please enter your name")
                     }
                     self.animateCell(cellIndexs: indexSet, isFadeOut: true)
+                    cell.isUserInteractionEnabled = false
                     self.firstCard = nil
                     self.firstCardIndex = nil
                 } else {
@@ -94,6 +104,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
             }
         }
     }
+    
     func alertMessages(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addTextField { (textField) in

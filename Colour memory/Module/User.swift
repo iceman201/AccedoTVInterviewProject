@@ -20,6 +20,7 @@ class User: Object {
     dynamic var points = 0
     dynamic var recordDate = NSDate()
     
+    
     override class func primaryKey() -> String? {
         return "id"
     }

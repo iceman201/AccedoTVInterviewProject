@@ -21,13 +21,19 @@ class RankViewController: UITableViewController {
             assertionFailure(error.localizedDescription)
         }
         self.navigationItem.title = "Rank"
-        tableView.tableFooterView = UIView()
-        tableView.backgroundColor = CMbackgroundColor
+        styleSheet()
         userInfo = realm?.objects(User.self).sorted(byKeyPath: "points", ascending: false)
     }
-
+    
+    fileprivate func styleSheet() {
+        tableView.tableFooterView = UIView()
+        tableView.backgroundColor = CMbackgroundColor
+        navigationController?.navigationBar.barTintColor = CMGreenColor
+        navigationController?.navigationBar.tintColor = CMTextLabelColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: CMTextLabelColor]
+    }
+    
     // MARK: - Table view data source
-
     override func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -40,20 +46,26 @@ class RankViewController: UITableViewController {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: "rankViewCell", for: indexPath) as? RankTableViewCell else {
             return UITableViewCell()
         }
-        if let haha = userInfo {
+        if let info = userInfo {
             let formatter = DateFormatter()
+            let maxPoint = userInfo?[0].points
             formatter.dateFormat = "dd.MM.yyyy"
-            cell.nameLabel.text = haha[indexPath.row].name
-            cell.pointLabel.text = "\(haha[indexPath.row].points) Pts "
-            cell.dateLabel.text = formatter.string(from: haha[indexPath.row].recordDate as Date)
-            if indexPath.row == 0 {
+            cell.nameLabel.text = info[indexPath.row].name
+            cell.pointLabel.text = "\(info[indexPath.row].points)"
+            cell.dateLabel.text = formatter.string(from: info[indexPath.row].recordDate as Date)
+            if Int(cell.pointLabel.text ?? "0") == maxPoint {
                 cell.imageViewWidth.constant = 50
                 cell.pointLabel.textColor = .red
                 cell.metalImageView.image = UIImage(named: "medal")
             }
-
+            cell.pointLabel.text = "\(cell.pointLabel.text ?? "0") Pts"
         }
         return cell
     }
     
+    func haha() {
+        
+        
+        
+    }
 }

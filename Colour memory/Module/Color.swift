@@ -10,4 +10,4 @@ import UIKit
 
 let CMbackgroundColor = UIColor(red: 35.0/255.0, green: 36.0/255.0, blue: 38.0/255.0, alpha: 1)
 let CMTextLabelColor = UIColor(red: 236.0/255.0, green: 239.0/255.0, blue: 241.0/255.0, alpha: 1)
-
+let CMGreenColor = UIColor(red: 0.0/255.0, green: 151.0/255.0, blue: 137.0/255.0, alpha: 1)

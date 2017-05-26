@@ -26,8 +26,9 @@ class RankTableViewCell: UITableViewCell {
         metalImageView.clipsToBounds = true
         self.backgroundColor = CMbackgroundColor
         nameLabel.textColor = CMTextLabelColor
-        dateLabel.textColor = CMTextLabelColor
+        dateLabel.textColor = CMTextLabelColor.withAlphaComponent(0.5)
         pointLabel.textColor = CMTextLabelColor
+        self.selectionStyle = .none
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
