@@ -16,12 +16,12 @@ class RankTableViewCell: UITableViewCell {
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var metalImageView: UIImageView!
     
-    @IBOutlet var imageViewWidth: NSLayoutConstraint!
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
         //Style goes here
-        imageViewWidth.constant = 0
+
         metalImageView.layer.cornerRadius = metalImageView.bounds.width / 2
         metalImageView.clipsToBounds = true
         self.backgroundColor = CMbackgroundColor
