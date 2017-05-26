@@ -54,7 +54,7 @@ class RankViewController: UITableViewController {
             cell.pointLabel.text = "\(info[indexPath.row].points)"
             cell.dateLabel.text = formatter.string(from: info[indexPath.row].recordDate as Date)
             if Int(cell.pointLabel.text ?? "0") == maxPoint {
-                cell.imageViewWidth.constant = 50
+                print(indexPath.row)
                 cell.pointLabel.textColor = .red
                 cell.metalImageView.image = UIImage(named: "medal")
             }

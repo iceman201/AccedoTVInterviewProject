@@ -44,15 +44,6 @@
                                             <nil key="textColor"/>
                                             <nil key="highlightedColor"/>
                                         </label>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 Pts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="677-r1-PD4">
-                                            <rect key="frame" x="228" y="25" width="61" height="21"/>
-                                            <constraints>
-                                                <constraint firstAttribute="height" constant="21" id="aZl-Uj-eUf"/>
-                                            </constraints>
-                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
-                                            <nil key="textColor"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="fGK-61-uPT">
                                             <rect key="frame" x="317" y="10" width="50" height="50"/>
                                             <constraints>
@@ -60,6 +51,15 @@
                                                 <constraint firstAttribute="height" constant="50" id="r1r-uk-AiL"/>
                                             </constraints>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="99 Pts" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="677-r1-PD4">
+                                            <rect key="frame" x="248" y="25" width="61" height="21"/>
+                                            <constraints>
+                                                <constraint firstAttribute="height" constant="21" id="aZl-Uj-eUf"/>
+                                            </constraints>
+                                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="SG2-DI-cga" firstAttribute="leading" secondItem="cbG-6S-jEw" secondAttribute="leadingMargin" constant="11" id="3E2-hW-Fcx"/>
@@ -69,8 +69,8 @@
                                         <constraint firstItem="SG2-DI-cga" firstAttribute="top" secondItem="FQX-yt-Wkk" secondAttribute="bottom" constant="8" id="V76-S2-ffC"/>
                                         <constraint firstItem="FQX-yt-Wkk" firstAttribute="leading" secondItem="cbG-6S-jEw" secondAttribute="leadingMargin" constant="11" id="WYI-jI-csT"/>
                                         <constraint firstItem="fGK-61-uPT" firstAttribute="centerY" secondItem="677-r1-PD4" secondAttribute="centerY" id="bgC-JE-Lsh"/>
-                                        <constraint firstItem="fGK-61-uPT" firstAttribute="leading" secondItem="677-r1-PD4" secondAttribute="trailing" constant="28" id="mM8-Rp-eip"/>
-                                        <constraint firstItem="677-r1-PD4" firstAttribute="leading" secondItem="FQX-yt-Wkk" secondAttribute="trailing" constant="8" id="pqC-LU-FFM"/>
+                                        <constraint firstItem="fGK-61-uPT" firstAttribute="leading" secondItem="677-r1-PD4" secondAttribute="trailing" constant="8" id="mM8-Rp-eip"/>
+                                        <constraint firstItem="677-r1-PD4" firstAttribute="leading" secondItem="FQX-yt-Wkk" secondAttribute="trailing" constant="28" id="pqC-LU-FFM"/>
                                         <constraint firstItem="FQX-yt-Wkk" firstAttribute="top" secondItem="cbG-6S-jEw" secondAttribute="topMargin" id="r5e-f3-cOS"/>
                                         <constraint firstItem="fGK-61-uPT" firstAttribute="top" secondItem="cbG-6S-jEw" secondAttribute="top" constant="10" id="rHG-YB-vyI"/>
                                         <constraint firstAttribute="trailing" secondItem="fGK-61-uPT" secondAttribute="trailing" constant="8" id="rPq-Vn-ffs"/>
@@ -78,7 +78,6 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="dateLabel" destination="SG2-DI-cga" id="N3D-vG-czr"/>
-                                    <outlet property="imageViewWidth" destination="mud-T3-evN" id="UpX-rA-lpg"/>
                                     <outlet property="metalImageView" destination="fGK-61-uPT" id="LSJ-zx-Lou"/>
                                     <outlet property="nameLabel" destination="FQX-yt-Wkk" id="EFV-5J-Ir4"/>
                                     <outlet property="pointLabel" destination="677-r1-PD4" id="mHo-Bb-DGH"/>

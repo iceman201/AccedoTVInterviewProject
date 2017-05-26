@@ -110,6 +110,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         alert.addTextField { (textField) in
             textField.placeholder = "Please enter Your name"
         }
+        // if name is empty should ask again
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (_)in
             if let field = alert.textFields?[0] {
                 self.currentUser = User()
