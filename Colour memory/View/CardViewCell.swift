@@ -16,7 +16,7 @@ class CardViewCell: UICollectionViewCell {
         super.awakeFromNib()
         self.isFlipped = false
         cardImageView.image = UIImage(named: "card-bg")
-    }
+    }    
     
     func tapCardView(colourIndex: Int, completed: @escaping (_ index:Int?) -> ()) {
         UIView.animate(withDuration: 0.5, delay: 0.0, options: .curveEaseInOut, animations: {

@@ -9,7 +9,6 @@
 import UIKit
 
 class MainViewController: UIViewController {
-
     @IBAction func startGameAction(_ sender: Any) {
         self.performSegue(withIdentifier: "showGame", sender: self)
     }

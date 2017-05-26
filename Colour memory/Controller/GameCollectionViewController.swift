@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RealmSwift
 
 private let reuseIdentifier = "cardView"
 
@@ -16,23 +17,16 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
     var secondCard: Int?
     var score = 0
     var totalNumberOfCards = 16
+    var currentUser: User?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Score: \(score)"
+        self.collectionView?.backgroundColor = CMbackgroundColor
         self.collectionView!.register(UINib.init(nibName: "CardViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         collectionView?.contentInset = UIEdgeInsets(top: 50.0, left: 0, bottom: 0, right: 0)
+        print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
-    }
-    */
 
     // MARK: UICollectionViewDataSource
 
@@ -80,6 +74,9 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
                     print("haha")
                     self.score += 2
                     self.totalNumberOfCards -= 2
+                    if self.totalNumberOfCards == 0 {
+                        self.alertMessages(title: "WIN!!!", message: "Please enter your name")
+                    }
                     self.animateCell(cellIndexs: indexSet, isFadeOut: true)
                     self.firstCard = nil
                     self.firstCardIndex = nil
@@ -97,7 +94,45 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
             }
         }
     }
-    func animateCell(cellIndexs:[Int], isFadeOut: Bool) {
+    func alertMessages(title: String, message: String) {
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alert.addTextField { (textField) in
+            textField.placeholder = "Please enter Your name"
+        }
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (_)in
+            if let field = alert.textFields?[0] {
+                self.currentUser = User()
+                if self.currentUser?.checkNameExist(inputName: field.text ?? "") == true {
+                    
+                    let realm = try! Realm()
+                    let existUser = realm.objects(User.self).filter("name == '\(field.text ?? "")'").first
+                    self.currentUser?.id = (existUser?.id)!
+                    self.currentUser?.name = (existUser?.name)!
+                    self.currentUser?.points = self.score
+                    let today = NSDate()
+                    self.currentUser?.recordDate = today
+                    try! realm.write {
+                        realm.add(self.currentUser!, update: true)
+                    }
+                } else {
+                    self.currentUser?.name = field.text ?? ""
+                    self.currentUser?.points = self.score
+                    self.currentUser?.id = (self.currentUser?.increaseID())!
+                    let today = NSDate()
+                    self.currentUser?.recordDate = today
+                    let realm = try! Realm()
+                    try! realm.write {
+                        realm.add(self.currentUser!, update: false)
+                    }
+                }
+                
+            }
+            _ = self.navigationController?.popViewController(animated: true)
+        }))
+        self.present(alert, animated: true, completion: nil)
+    }
+
+    fileprivate func animateCell(cellIndexs:[Int], isFadeOut: Bool) {
         for eachIndex in cellIndexs {
             guard let cell = self.getCellAtIndex(index: eachIndex, sectionNumber: 0) else {
                 assertionFailure("Animate Cell Error")
@@ -119,34 +154,4 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         return cell
     }
     
-    
-    /*
-    // Uncomment this method to specify if the specified item should be highlighted during tracking
-    override func collectionView(_ collectionView: UICollectionView, shouldHighlightItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment this method to specify if the specified item should be selected
-    override func collectionView(_ collectionView: UICollectionView, shouldSelectItemAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-    */
-
-    /*
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-    
-    }
-    */
-
 }

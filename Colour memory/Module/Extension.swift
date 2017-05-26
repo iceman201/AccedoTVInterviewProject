@@ -7,6 +7,11 @@
 //
 
 import Foundation
+import RealmSwift
+
+
+
 extension String: LocalizedError {
     public var errorDescription: String? { return self }
 }
+

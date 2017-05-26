@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		051AB0CD1ED8481F008C6DC8 /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 051AB0CC1ED8481F008C6DC8 /* Color.swift */; };
+		056816491ED822150071CECE /* RankTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 056816481ED822150071CECE /* RankTableViewCell.swift */; };
 		058EFA7C1ED6E0230056A56A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 058EFA7B1ED6E0230056A56A /* AppDelegate.swift */; };
 		058EFA811ED6E0230056A56A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 058EFA7F1ED6E0230056A56A /* Main.storyboard */; };
 		058EFA841ED6E0230056A56A /* Colour_memory.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 058EFA821ED6E0230056A56A /* Colour_memory.xcdatamodeld */; };
@@ -35,6 +37,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		051AB0CC1ED8481F008C6DC8 /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		056816481ED822150071CECE /* RankTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RankTableViewCell.swift; sourceTree = "<group>"; };
 		058EFA781ED6E0230056A56A /* Colour memory.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Colour memory.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		058EFA7B1ED6E0230056A56A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		058EFA801ED6E0230056A56A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -130,6 +134,7 @@
 			children = (
 				059226981ED6FFA800C08B90 /* User.swift */,
 				059226A21ED7242F00C08B90 /* Extension.swift */,
+				051AB0CC1ED8481F008C6DC8 /* Color.swift */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -139,6 +144,7 @@
 			children = (
 				0592269E1ED70B6400C08B90 /* CardViewCell.swift */,
 				0592269F1ED70B6400C08B90 /* CardViewCell.xib */,
+				056816481ED822150071CECE /* RankTableViewCell.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -379,7 +385,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				0592269B1ED7010800C08B90 /* GameCollectionViewController.swift in Sources */,
+				056816491ED822150071CECE /* RankTableViewCell.swift in Sources */,
 				059226971ED6FCE200C08B90 /* RankViewController.swift in Sources */,
+				051AB0CD1ED8481F008C6DC8 /* Color.swift in Sources */,
 				059226991ED6FFA800C08B90 /* User.swift in Sources */,
 				059226911ED6EF5F00C08B90 /* MainViewController.swift in Sources */,
 				058EFA7C1ED6E0230056A56A /* AppDelegate.swift in Sources */,
