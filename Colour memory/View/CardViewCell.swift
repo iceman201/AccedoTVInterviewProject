@@ -12,6 +12,7 @@ import Foundation
 class CardViewCell: UICollectionViewCell {
     @IBOutlet var cardImageView: UIImageView!
     var isFlipped: Bool?
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         self.isFlipped = false

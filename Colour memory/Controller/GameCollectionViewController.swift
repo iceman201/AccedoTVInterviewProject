@@ -18,27 +18,24 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
     var score = 0
     var totalNumberOfCards = 16
     var currentUser: User?
-    var randomArray: [Int]?
+    lazy var randomArray: [Int] = {
+        return [].randomPairs
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        randomArray = generatePairRandomNumber(numberOfPair: 8)
-        self.navigationItem.title = "Score: \(score)"
+        styleSheet()
         self.collectionView?.backgroundColor = CMbackgroundColor
-        self.collectionView!.register(UINib.init(nibName: "CardViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.register(UINib.init(nibName: "CardViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         collectionView?.contentInset = UIEdgeInsets(top: 50.0, left: 0, bottom: 0, right: 0)
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+    fileprivate func styleSheet() {
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.title = "Score: \(score)"
+        navigationController?.navigationBar.barTintColor = CMGreenColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: CMTextLabelColor]
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    
 
     // MARK: UICollectionViewDataSource
 
@@ -54,7 +51,6 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CardViewCell else {
             return UICollectionViewCell()
         }
-        
         return cell
     }
 
@@ -69,9 +65,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         guard let cell = collectionView.cellForItem(at: indexPath) as? CardViewCell else {
             return
         }
-        
-        
-        cell.tapCardView(colourIndex: indexPath.row, randomArray: randomArray ?? [0]) { (index) in
+        cell.tapCardView(colourIndex: indexPath.row, randomArray: randomArray) { (index) in
             guard let cardIndex = index else {
                 return
             }
@@ -99,7 +93,6 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
                     self.score -= 1
                     // If not solution is here
                     self.score = self.score < 0 ? 0 : self.score
-
                     self.firstCard = nil
                     self.firstCardIndex = nil
                 }
@@ -113,38 +106,57 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         alert.addTextField { (textField) in
             textField.placeholder = "Please enter Your name"
         }
-        // if name is empty should ask again
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (_)in
             if let field = alert.textFields?[0] {
+                if field.text == "" { field.text = "Ghost O_O" }
                 self.currentUser = User()
                 if self.currentUser?.checkNameExist(inputName: field.text ?? "") == true {
-                    
-                    let realm = try! Realm()
-                    let existUser = realm.objects(User.self).filter("name == '\(field.text ?? "")'").first
-                    self.currentUser?.id = (existUser?.id)!
-                    self.currentUser?.name = (existUser?.name)!
-                    self.currentUser?.points = self.score
-                    let today = NSDate()
-                    self.currentUser?.recordDate = today
-                    try! realm.write {
-                        realm.add(self.currentUser!, update: true)
+                    do {
+                        let realm = try Realm()
+                        if let existUser = realm.objects(User.self).filter("name == '\(field.text ?? "")'").first {
+                            self.writeIntoRealm(sourceRealm: realm, user: existUser, name: nil, isUpdate: true)
+                        }
+                    } catch let error {
+                        assertionFailure(error.localizedDescription)
                     }
                 } else {
-                    self.currentUser?.name = field.text ?? ""
-                    self.currentUser?.points = self.score
-                    self.currentUser?.id = (self.currentUser?.increaseID())!
-                    let today = NSDate()
-                    self.currentUser?.recordDate = today
-                    let realm = try! Realm()
-                    try! realm.write {
-                        realm.add(self.currentUser!, update: false)
+                    do {
+                        let realm = try Realm()
+                        self.writeIntoRealm(sourceRealm: realm, user: nil, name: field.text ?? "", isUpdate: true)
+                    } catch let error {
+                        assertionFailure(error.localizedDescription)
                     }
                 }
-                
             }
             _ = self.navigationController?.popViewController(animated: true)
         }))
         self.present(alert, animated: true, completion: nil)
+    }
+    
+    fileprivate func writeIntoRealm(sourceRealm: Realm, user: User?, name: String?, isUpdate: Bool) {
+        self.currentUser?.points = self.score
+        let today = NSDate()
+        self.currentUser?.recordDate = today
+        if let targetUser = user {
+            self.currentUser?.id = targetUser.id
+            self.currentUser?.name = targetUser.name
+        } else {
+            if let generateID = self.currentUser?.increaseID() {
+                self.currentUser?.id = generateID
+            }
+            self.currentUser?.name = name ?? ""
+        }
+        do {
+            try sourceRealm.write {
+                if let recordUser = self.currentUser {
+                    sourceRealm.add(recordUser, update: isUpdate)
+                } else {
+                    assertionFailure("Fail on grab current user  <Realm>")
+                }
+            }
+        } catch let error {
+            assertionFailure(error.localizedDescription)
+        }
     }
 
     fileprivate func animateCell(cellIndexs:[Int], isFadeOut: Bool) {
@@ -168,15 +180,4 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         }
         return cell
     }
-    
-    fileprivate func generatePairRandomNumber(numberOfPair: Int) -> [Int] {
-        var result: [Int] = []
-        for _ in 0..<numberOfPair {
-            let number = Int(arc4random_uniform(UInt32(numberOfPair) + 1))
-            result.append(number)
-            result.append(number)
-        }
-        return result.shuffled
-    }
-    
 }

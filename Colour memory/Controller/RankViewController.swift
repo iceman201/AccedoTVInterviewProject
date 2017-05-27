@@ -17,7 +17,6 @@ class RankViewController: UITableViewController {
         do {
             realm = try Realm()
         } catch let error {
-            //error handle
             assertionFailure(error.localizedDescription)
         }
         self.navigationItem.title = "Rank"
