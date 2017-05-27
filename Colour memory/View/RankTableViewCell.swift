@@ -15,9 +15,7 @@ class RankTableViewCell: UITableViewCell {
     
     @IBOutlet var dateLabel: UILabel!
     @IBOutlet var metalImageView: UIImageView!
-    
-
-    
+        
     override func awakeFromNib() {
         super.awakeFromNib()
         //Style goes here

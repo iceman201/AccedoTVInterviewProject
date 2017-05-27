@@ -63,9 +63,4 @@ class RankViewController: UITableViewController {
         return cell
     }
     
-    func haha() {
-        
-        
-        
-    }
 }

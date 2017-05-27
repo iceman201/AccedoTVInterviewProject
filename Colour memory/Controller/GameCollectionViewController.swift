@@ -18,9 +18,10 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
     var score = 0
     var totalNumberOfCards = 16
     var currentUser: User?
-    
+    var randomArray: [Int]?
     override func viewDidLoad() {
         super.viewDidLoad()
+        randomArray = generatePairRandomNumber(numberOfPair: 8)
         self.navigationItem.title = "Score: \(score)"
         self.collectionView?.backgroundColor = CMbackgroundColor
         self.collectionView!.register(UINib.init(nibName: "CardViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
@@ -53,6 +54,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath) as? CardViewCell else {
             return UICollectionViewCell()
         }
+        
         return cell
     }
 
@@ -68,7 +70,8 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
             return
         }
         
-        cell.tapCardView(colourIndex: indexPath.row) { (index) in
+        
+        cell.tapCardView(colourIndex: indexPath.row, randomArray: randomArray ?? [0]) { (index) in
             guard let cardIndex = index else {
                 return
             }
@@ -105,7 +108,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         }
     }
     
-    func alertMessages(title: String, message: String) {
+    fileprivate func alertMessages(title: String, message: String) {
         let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Please enter Your name"
@@ -164,6 +167,16 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
             return nil
         }
         return cell
+    }
+    
+    fileprivate func generatePairRandomNumber(numberOfPair: Int) -> [Int] {
+        var result: [Int] = []
+        for _ in 0..<numberOfPair {
+            let number = Int(arc4random_uniform(UInt32(numberOfPair) + 1))
+            result.append(number)
+            result.append(number)
+        }
+        return result.shuffled
     }
     
 }
