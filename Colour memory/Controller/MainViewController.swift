@@ -17,7 +17,6 @@ class MainViewController: UIViewController {
         self.performSegue(withIdentifier: "showRank", sender: self)
     }
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
@@ -31,10 +30,5 @@ class MainViewController: UIViewController {
         super.viewWillDisappear(animated)
         self.navigationController?.isNavigationBarHidden = false
     }
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        
-    }
-
 }
 

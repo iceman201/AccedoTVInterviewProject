@@ -24,23 +24,18 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.navigationItem.title = "Score: \(score)"
+        styleSheet()
         self.collectionView?.backgroundColor = CMbackgroundColor
-        self.collectionView!.register(UINib.init(nibName: "CardViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
+        self.collectionView?.register(UINib.init(nibName: "CardViewCell", bundle: Bundle.main), forCellWithReuseIdentifier: reuseIdentifier)
         collectionView?.contentInset = UIEdgeInsets(top: 50.0, left: 0, bottom: 0, right: 0)
-        print(Realm.Configuration.defaultConfiguration.fileURL!)
+        //print(Realm.Configuration.defaultConfiguration.fileURL!)
     }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        self.navigationController?.isNavigationBarHidden = true
+    fileprivate func styleSheet() {
+        self.navigationItem.setHidesBackButton(true, animated: false)
+        self.navigationItem.title = "Score: \(score)"
+        navigationController?.navigationBar.barTintColor = CMGreenColor
+        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: CMTextLabelColor]
     }
-    
-    override func viewWillDisappear(_ animated: Bool) {
-        super.viewWillDisappear(animated)
-        self.navigationController?.isNavigationBarHidden = false
-    }
-    
 
     // MARK: UICollectionViewDataSource
 
@@ -111,9 +106,9 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         alert.addTextField { (textField) in
             textField.placeholder = "Please enter Your name"
         }
-        // if name is empty should ask again
         alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (_)in
             if let field = alert.textFields?[0] {
+                if field.text == "" { field.text = "Ghost O_O" }
                 self.currentUser = User()
                 if self.currentUser?.checkNameExist(inputName: field.text ?? "") == true {
                     do {

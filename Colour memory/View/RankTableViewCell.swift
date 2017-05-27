@@ -18,21 +18,14 @@ class RankTableViewCell: UITableViewCell {
         
     override func awakeFromNib() {
         super.awakeFromNib()
-        //Style goes here
-
+        
         metalImageView.layer.cornerRadius = metalImageView.bounds.width / 2
         metalImageView.clipsToBounds = true
-        self.backgroundColor = CMbackgroundColor
         nameLabel.textColor = CMTextLabelColor
         dateLabel.textColor = CMTextLabelColor.withAlphaComponent(0.5)
         pointLabel.textColor = CMTextLabelColor
+        
+        self.backgroundColor = CMbackgroundColor
         self.selectionStyle = .none
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-
 }

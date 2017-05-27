@@ -7,11 +7,6 @@
 //
 
 import Foundation
-import RealmSwift
-
-extension String: LocalizedError {
-    public var errorDescription: String? { return self }
-}
 
 extension Array {
     /// Returns an array containing this sequence shuffled
@@ -19,9 +14,9 @@ extension Array {
         var elements = self
         return elements.shuffle()
     }
-    /// Shuffles this sequence in place
     
     @discardableResult
+    /// Shuffles this sequence in place
     mutating func shuffle() -> Array {
         indices.dropLast().forEach {
             guard case let index = Int(arc4random_uniform(UInt32(count - $0))) + $0, index != $0 else {

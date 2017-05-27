@@ -9,18 +9,12 @@
 import Foundation
 import RealmSwift
 
-private let _UserSharedInstance = User()
-
 class User: Object {
-    class var sharedInstance: User {
-        return _UserSharedInstance
-    }
     dynamic var id = 0
     dynamic var name = ""
     dynamic var points = 0
     dynamic var recordDate = NSDate()
-    
-    
+
     override class func primaryKey() -> String? {
         return "id"
     }
@@ -50,6 +44,4 @@ class User: Object {
             return false
         }
     }
-    
-    
 }
