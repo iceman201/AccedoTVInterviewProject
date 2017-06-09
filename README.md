@@ -1,6 +1,6 @@
 # AccedoTV Interview Project
 
-# Work Sample
+##### Work Sample
 The goal of this work sample is to construct a sample memory game called ”Colour Memory”.
 The game board consists of a 4x4 grid with 8 pairs of color cards.
 The game starts initially with all cards facing down. The player is to then flip two cards each
