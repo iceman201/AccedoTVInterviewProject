@@ -1,4 +1,4 @@
-# AccedoTV Interview Project
+# AccedoTV Interview Project (Auckland)
 
 ##### Work Sample
 The goal of this work sample is to construct a sample memory game called ”Colour Memory”.
