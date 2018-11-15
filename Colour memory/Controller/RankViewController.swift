@@ -29,7 +29,7 @@ class RankViewController: UITableViewController {
         tableView.backgroundColor = CMbackgroundColor
         navigationController?.navigationBar.barTintColor = CMGreenColor
         navigationController?.navigationBar.tintColor = CMTextLabelColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: CMTextLabelColor]
+        navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: CMTextLabelColor])
     }
     
     // MARK: - Table view data source
@@ -62,4 +62,10 @@ class RankViewController: UITableViewController {
         return cell
     }
     
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }

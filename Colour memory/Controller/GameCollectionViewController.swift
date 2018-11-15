@@ -34,7 +34,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         self.navigationItem.setHidesBackButton(true, animated: false)
         self.navigationItem.title = "Score: \(score)"
         navigationController?.navigationBar.barTintColor = CMGreenColor
-        navigationController?.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName: CMTextLabelColor]
+        navigationController?.navigationBar.titleTextAttributes = convertToOptionalNSAttributedStringKeyDictionary([NSAttributedString.Key.foregroundColor.rawValue: CMTextLabelColor])
     }
 
     // MARK: UICollectionViewDataSource
@@ -106,7 +106,7 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         alert.addTextField { (textField) in
             textField.placeholder = "Please enter Your name"
         }
-        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertActionStyle.default, handler:{ (_)in
+        alert.addAction(UIAlertAction(title: "Ok", style: UIAlertAction.Style.default, handler:{ (_)in
             if let field = alert.textFields?[0] {
                 if field.text == "" { field.text = "Ghost O_O" }
                 self.currentUser = User()
@@ -180,4 +180,10 @@ class GameCollectionViewController: UICollectionViewController, UICollectionView
         }
         return cell
     }
+}
+
+// Helper function inserted by Swift 4.2 migrator.
+fileprivate func convertToOptionalNSAttributedStringKeyDictionary(_ input: [String: Any]?) -> [NSAttributedString.Key: Any]? {
+	guard let input = input else { return nil }
+	return Dictionary(uniqueKeysWithValues: input.map { key, value in (NSAttributedString.Key(rawValue: key), value)})
 }
